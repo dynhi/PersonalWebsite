@@ -57,28 +57,28 @@
         <div class="left_section">
             <div class="common_content">
                 <h2>Registration Form Result</h2>
-                <jsp:useBean id="formBean" class="FormBean"  scope="session"/>
+                <jsp:useBean id="formBean" class="model.FormBean" scope="session"/>
                 <jsp:setProperty name="formBean" property="*"/>
                 <table align=center border="1px">
                     <tr>
                         <td>Full name: </td>
-                        <td><%= formBean.getFullname() %></td>
+                        <td><jsp:getProperty name="formBean" property="fullname" /></td>
                     </tr>
                     <tr>
                         <td>Email: </td>
-                        <td><%= formBean.getEmail() %></td>
+                        <td><jsp:getProperty name="formBean" property="email" /></td>
                     </tr>
                     <tr>
                         <td>Username: </td>
-                        <td><%= formBean.getUsername() %></td>
+                        <td><jsp:getProperty name="formBean" property="username" /></td>
                     </tr>
                     <tr>
                         <td>Password: </td>
-                        <td><%= formBean.getPassword() %></td>
+                        <td><jsp:getProperty name="formBean" property="password" /></td>
                     </tr>
                     <tr>
                         <td>Confirmed Password: </td>
-                        <td><%= formBean.getcPassword() %></td>
+                        <td><jsp:getProperty name="formBean" property="cPassword" /></td>
                     </tr>
                 </table>
             </div>
@@ -94,3 +94,4 @@
 </div>
 </body>
 </html>
+

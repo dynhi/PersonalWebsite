@@ -1,17 +1,11 @@
+package model;
+
 public class FormBean {
     private String fullname = null;
     private String email = null;
     private String username = null;
     private String password = null;
     private String cPassword = null;
-
-    public String getFullname() {
-        return fullname;
-    }
-
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
-    }
 
     public String getEmail() {
         return email;

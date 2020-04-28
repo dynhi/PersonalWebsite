@@ -7,6 +7,6 @@ This website is designed for the course Web Application at Ho Chi Minh City Inte
   <li>Techniques: I used Java as the main programming language. I created my website with JSP, HTML, CSS and HTML syntax in JSP files. I developed on Tomcat 9.0 server (Glassfish server can also be used). Default access point: http://localhost:8081/Midterm/web/index.jsp </li>
 </ul>
 The sitemap of the website is as follow:<br>
-<img align = "center" src = "/hierarchical diagram.png" weight = "500"><br>
+<img align = "center" src = "/hierarchical diagram.png" weight = "250"><br>
 The subfunction use case diagram of the website is as follow:<br>
-<img align = "center" src = "/use case.png" weight = "500"><br>
+<img align = "center" src = "/use case.png" weight = "250"><br>

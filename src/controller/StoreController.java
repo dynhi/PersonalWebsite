@@ -1,9 +1,13 @@
-import javax.servlet.RequestDispatcher;
+package controller;
+
+import model.FormBean;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet (name = "storeController", urlPatterns = "/storeController")
@@ -15,18 +19,14 @@ public class StoreController extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        RequestDispatcher rd = request.getRequestDispatcher("registrationBean.jsp");
-        rd.forward(request, response);
+        doPost(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        String fullname = request.getParameter("fullname");
-        String email = request.getParameter("email");
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        String cPassword = request.getParameter("cPassword");
-
-        if (cPassword.equals(password)){
+        HttpSession session = request.getSession();
+        if(request.getParameter("cPassword").equals(request.getParameter("password"))){
+            FormBean formBean = (FormBean) session.getAttribute("formBean");
+            request.getRequestDispatcher("resultBean.jsp").include(request, response);
             response.sendRedirect("resultBean.jsp");
         }
         else {
